@@ -1,4 +1,34 @@
 import Nav from "./Nav"
+import { ApiPost } from "../apis/ApiPost"
+
+// Definir el tipo de los datos
+interface formData {
+  name: string;
+  email: string;
+  message: string;
+}
+// Función para manejar el submit
+const handlesubmit = async (e: Event) => {
+  e.preventDefault();
+  const form = e.target as HTMLFormElement;
+  const data: formData = { 
+    name: (form.querySelector('#name') as HTMLInputElement).value,
+    email: (form.querySelector('#email') as HTMLInputElement).value,
+    message: (form.querySelector('#message') as HTMLTextAreaElement).value,
+  }
+  try {
+    const response = await ApiPost('https://api.example.com/contact', data);
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  } 
+}
+const form = document.querySelector('.contact-form') as HTMLFormElement;
+if (form) {
+  form.addEventListener('submit', handlesubmit);
+} 
+
+
 
 export function Contacto() {
   return (
