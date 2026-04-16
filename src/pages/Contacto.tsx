@@ -1,7 +1,7 @@
 import Nav from "./Nav"
 import { ApiPost } from "../apis/ApiPost"
 import { motion } from 'framer-motion';
-import { FormEvent } from "react"
+import { FormEvent } from "react";
 
   // Definir el tipo de los datos
 interface formData {
