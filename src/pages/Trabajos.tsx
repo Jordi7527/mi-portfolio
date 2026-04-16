@@ -1,4 +1,5 @@
-import Nav from './Nav'
+import Nav from './Nav';
+import { motion } from 'framer-motion';
 
 const projects = [
   {
@@ -22,24 +23,30 @@ const projects = [
 export function Trabajos() {
   return (
     <>
-      <Nav />
-      <section id="projects">
-        <div className="page-content">
-          <p className="section-label">Proyectos</p>
-          <div className="project-grid">
-            {projects.map((p, i) => (
-              <article key={i} className="project-card">
-                <div>
-                  <h3>{p.title}</h3>
-                </div>
-                <div>
-                  <p>{p.descripcion}</p>
-                </div>
-              </article>
-            ))}
+      <motion.div
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -50 }}
+      transition={{ duration: 0.5 }}>
+        <Nav />
+        <section id="projects">
+          <div className="page-content">
+            <p className="section-label">Proyectos</p>
+            <div className="project-grid">
+              {projects.map((p, i) => (
+                <article key={i} className="project-card">
+                  <div>
+                    <h3>{p.title}</h3>
+                  </div>
+                  <div>
+                    <p>{p.descripcion}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </motion.div>
     </>
   )
 }

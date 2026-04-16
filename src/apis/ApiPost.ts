@@ -1,4 +1,4 @@
-export const ApiPost = async (url: string, data: any) => {
+export const ApiPost = async (url: string, data: unknown) => {
     const response = await fetch(url, {
         method: 'POST',
         headers: {

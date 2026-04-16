@@ -1,4 +1,5 @@
 import Nav from "./Nav"
+import { motion } from 'framer-motion';
 
 const skills = [
   { tag: "Lenguajes", name: "JavaScript, PHP, TypeScript, HTML, CSS" },
@@ -15,20 +16,26 @@ const skills = [
 export function Habilidades() {
   return (
     <>
-      <Nav />
-      <section id="skills">
-        <div className="page-content">
-          <p className="section-label">Habilidades</p>
-          <div className="skills-grid">
-            {skills.map((skill, i) => (
-              <div key={i} className="skill-cell">
-                <span className="skill-tag">{skill.tag}</span>
-                <span className="skill-name">{skill.name}</span>
-              </div>
-            ))}
+      <motion.div
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -50 }}
+      transition={{ duration: 0.5 }}>
+        <Nav />
+        <section id="skills">
+          <div className="page-content">
+            <p className="section-label">Habilidades</p>
+            <div className="skills-grid">
+              {skills.map((skill, i) => (
+                <div key={i} className="skill-cell">
+                  <span className="skill-tag">{skill.tag}</span>
+                  <span className="skill-name">{skill.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </motion.div>
     </>
   )
 }

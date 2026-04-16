@@ -1,4 +1,4 @@
-/* :root {
+ :root {
     --bg: #F5F4F0;
     --ink: #111110;
     --muted: #888884;
@@ -9,7 +9,7 @@
 }
 
 
-
+/*
 body {
     background: var(--bg);
     color: var(--ink);

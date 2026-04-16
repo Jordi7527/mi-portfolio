@@ -47,7 +47,7 @@ body::before {
 
   /* ── HERO ── */
   #hero {
-    min-height: 100vh;
+    min-height: 89vh;
     display: flex; flex-direction: column; justify-content: center;
     padding: 8rem 3rem 4rem;
     max-width: 960px;
@@ -58,7 +58,7 @@ body::before {
   #hero::after {
     content: '';
     position: absolute; right: -10%; top: 20%;
-    width: 400px; height: 400px;
+    /* width: 400px; height: 400px; */
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
     border-radius: 50%;
     filter: blur(100px);
@@ -125,7 +125,10 @@ body::before {
 
   /* ── ABOUT ── */
   #about, #skills, #projects, #contact { position: relative; z-index: 1; }
-  #about { border-top: 1px solid var(--line); }
+  #about { 
+    border-top: 1px solid var(--line); 
+    height: 89vh;
+  }
   .section-label {
     font-family: var(--mono); font-size: .72rem; color: var(--accent);
     letter-spacing: .12em; text-transform: uppercase; margin-bottom: 3rem;
@@ -159,7 +162,12 @@ body::before {
   .skill-name { font-size: 1.05rem; font-weight: 400; }
 
   /* ── PROJECTS ── */
-  #projects, #contact, .page-content { padding: 7rem 3rem 5rem; max-width: 960px; margin: 0 auto; }
+  #projects, #contact, .page-content { 
+    padding: 7rem 3rem 5rem; 
+    max-width: 960px; 
+    margin: 0 auto; 
+    height: 100%;
+  }
   .project-grid { display: grid; gap: 2rem; }
   .project-card {
     display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start;
@@ -202,11 +210,11 @@ body::before {
 
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
-    #hero { padding: 6rem 1.5rem 3rem; }
+    #hero { padding: 1rem 1.5rem 3rem; }
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .skills-grid { grid-template-columns: 1fr; }
     .project-card { grid-template-columns: 1fr; gap: 1.5rem; }
     .contact-grid { grid-template-columns: 1fr; }
-    #projects, #contact, .page-content { padding: 5rem 1.5rem 4rem; }
+    #projects, #contact, .page-content { padding: 1rem 1.5rem 4rem; }
   }
 
