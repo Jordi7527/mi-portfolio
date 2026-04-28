@@ -26,7 +26,7 @@ export function Contacto() {
 
     console.log(data);
     try {
-      const response = await ApiPost('https://api.example.com/contact', data);
+      const response = await ApiPost('https://jdiazb.great-site.net/index.php', data);
       console.log(response);
     } catch (error) {
       console.error(error);
