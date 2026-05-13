@@ -26,7 +26,7 @@ export function Contacto() {
 
     console.log(data);
     try {
-      const URL:string = "https://jdiazb.great-site.net/index.php";
+      const URL:string = "https://server-portfolio-7y53.onrender.com/email";
       console.log('URL',URL)
       const response = await ApiPost(URL, data);
       console.log(response);
