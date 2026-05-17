@@ -27,7 +27,7 @@ export function Contacto() {
     console.log(data);
     try {
   
-      const URL = "https://server-portfolio-7y53.onrender.com";
+      const URL = "https://server-portfolio-7y53.onrender.com/email";
       console.log('URL',URL)
       const response = await ApiPost(URL, data);
       console.log(response);
